@@ -1,0 +1,20 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.hbop.runescore.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "enchantment.M_EnchantBookFactory",
+    "enchantment.M_EnchantingTableBlock",
+    "enchantment.M_EnchantRandomlyLootFunction",
+    "enchantment.M_EnchantWithLevelsLootFunction",
+    "enchantment.M_ItemStack",
+    "enchantment.M_SetEnchantmentsLootFunction",
+    "experience.M_PlayerEntity",
+    "experience.M_ServerWorld",
+    "repairing.M_AnvilScreenHandler"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

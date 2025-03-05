@@ -1,0 +1,32 @@
+{
+	"item.runescore.rune": "Rune",
+	"item.runescore.rune_prefix": "Rune of %s",
+	"item.runescore.corrupted_rune_prefix": "Corrupted Rune of %s",
+	"item.rune.level": "Level %s",
+	"item.rune.size": "Size %s",
+	"item.rune.when_applied_to": "When applied to %s:",
+	"item.rune.removes": "Removes %s",
+	
+	"item.rune.runes": "Runes: ",
+	"container.enchantment.incompatible": "Incompatible Rune",
+	"container.enchantment.full": "Rune Slots Full",
+	"container.enchantment.inadequate_lapis": "Inadequate Lapis",
+	"container.enchantment.equal": "Equal Enchantments",
+	"container.enchantment.downgrade": "Downgrading",
+	
+	"tag.item.minecraft.enchantable.durability": "Equipment",
+	"tag.item.minecraft.enchantable.bow": "Bows",
+	"tag.item.minecraft.enchantable.fire_aspect": "Swords & Maces",
+	"tag.item.minecraft.enchantable.sword": "Swords",
+	"tag.item.minecraft.enchantable.crossbow": "Crossbows",
+	"tag.item.minecraft.enchantable.trident": "Tridents",
+	"tag.item.minecraft.enchantable.mace": "Maces",
+	"tag.item.minecraft.enchantable.head_armor": "Helmets",
+	"tag.item.minecraft.enchantable.chest_armor": "Chestplates",
+	"tag.item.minecraft.enchantable.leg_armor": "Leggings",
+	"tag.item.minecraft.enchantable.foot_armor": "Boots",
+	"tag.item.minecraft.enchantable.armor": "Armour",
+	"tag.item.minecraft.enchantable.mining": "Mining Tools & Shears",
+	"tag.item.minecraft.enchantable.mining_loot": "Mining Tools",
+	"tag.item.minecraft.enchantable.fishing": "Fishing Rods"
+}

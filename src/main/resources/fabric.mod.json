@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "runescore",
+  "version": "${version}",
+  "name": "Runes Core",
+  "description": "",
+  "authors": ["HBOP"],
+  "contact": {},
+  "license": "MIT",
+  "icon": "icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "dev.hbop.runescore.client.RunesCoreClient"
+    ],
+    "main": [
+      "dev.hbop.runescore.RunesCore"
+    ]
+  },
+  "mixins": [
+    "runescore.mixins.json",
+    {
+      "config": "runescore.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
