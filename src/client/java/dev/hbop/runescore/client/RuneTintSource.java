@@ -5,7 +5,7 @@ import com.mojang.serialization.codecs.RecordCodecBuilder;
 import dev.hbop.runescore.component.ModComponents;
 import dev.hbop.runescore.component.RuneComponent;
 import dev.hbop.runescore.helper.RuneHelper;
-import dev.hbop.runescore.helper.RuneInfo;
+import dev.hbop.runescore.helper.RuneTemplate;
 import net.minecraft.client.render.item.tint.TintSource;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.entity.LivingEntity;
@@ -32,9 +32,9 @@ public record RuneTintSource(int defaultColor) implements TintSource {
         Formatting color;
         if (component.level() == 0) color = Formatting.RED;
         else {
-            RuneInfo info = RuneHelper.getRuneInfo(component.identifier());
-            if (info == null) return defaultColor;
-            int colorIndex = info.getMaxLevel() - component.level();
+            RuneTemplate template = RuneHelper.getRuneInfo(component.identifier());
+            if (template == null) return defaultColor;
+            int colorIndex = template.maxLevel() - component.level();
             color = new Formatting[] {
                     Formatting.LIGHT_PURPLE,
                     Formatting.AQUA,

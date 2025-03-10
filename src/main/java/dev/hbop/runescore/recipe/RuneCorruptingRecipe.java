@@ -3,7 +3,7 @@ package dev.hbop.runescore.recipe;
 import dev.hbop.runescore.component.ModComponents;
 import dev.hbop.runescore.component.RuneComponent;
 import dev.hbop.runescore.helper.RuneHelper;
-import dev.hbop.runescore.helper.RuneInfo;
+import dev.hbop.runescore.helper.RuneTemplate;
 import dev.hbop.runescore.item.ModItems;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -49,7 +49,7 @@ public class RuneCorruptingRecipe extends SpecialCraftingRecipe {
     public ItemStack craft(CraftingRecipeInput input, RegistryWrapper.WrapperLookup registries) {
         RuneComponent runeComponent = input.getStackInSlot(1, 1).get(ModComponents.RUNE_COMPONENT);
         assert runeComponent != null;
-        RuneInfo info = RuneHelper.getRuneInfo(runeComponent.identifier());
+        RuneTemplate info = RuneHelper.getRuneInfo(runeComponent.identifier());
         assert info != null;
         ItemStack output = new ItemStack(ModItems.RUNE);
         output.applyComponentsFrom(

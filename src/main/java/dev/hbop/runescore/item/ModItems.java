@@ -2,7 +2,7 @@ package dev.hbop.runescore.item;
 
 import dev.hbop.runescore.RunesCore;
 import dev.hbop.runescore.helper.RuneHelper;
-import dev.hbop.runescore.helper.RuneInfo;
+import dev.hbop.runescore.helper.RuneTemplate;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
@@ -22,12 +22,12 @@ public class ModItems {
 
     public static void initialiseItems() {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register((itemGroup) -> {
-            for (RuneInfo info : RuneHelper.RUNE_INFOS) {
-                for (int level = 0; level <= info.getMaxLevel(); level++) {
+            for (RuneTemplate template : RuneHelper.RUNE_TEMPLATES) {
+                for (int level = 0; level <= template.maxLevel(); level++) {
                     int l = level;
                     ItemStack stack = new ItemStack(RUNE);
                     itemGroup.getContext().lookup().getOptional(RegistryKeys.ENCHANTMENT).ifPresent((registryWrapper) ->
-                            stack.applyComponentsFrom(info.getComponents(l, registryWrapper))
+                            stack.applyComponentsFrom(template.getComponents(l, registryWrapper))
                     );
                     itemGroup.add(stack);
                 }

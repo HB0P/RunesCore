@@ -3,7 +3,7 @@ package dev.hbop.runescore.loot;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import dev.hbop.runescore.helper.RuneHelper;
-import dev.hbop.runescore.helper.RuneInfo;
+import dev.hbop.runescore.helper.RuneTemplate;
 import net.minecraft.item.ItemStack;
 import net.minecraft.loot.condition.LootCondition;
 import net.minecraft.loot.context.LootContext;
@@ -53,11 +53,11 @@ public class SetRuneLootFunction extends ConditionalLootFunction {
 
     @Override
     protected ItemStack process(ItemStack stack, LootContext context) {
-        RuneInfo runeInfo = RuneHelper.getRuneInfo(id);
-        if (runeInfo == null) return stack;
+        RuneTemplate runeTemplate = RuneHelper.getRuneInfo(id);
+        if (runeTemplate == null) return stack;
         
         stack.applyComponentsFrom(
-                runeInfo.getComponents(
+                runeTemplate.getComponents(
                         level.nextInt(context), 
                         context.getWorld().getRegistryManager().getOrThrow(RegistryKeys.ENCHANTMENT)
                 )

@@ -1,6 +1,17 @@
 {
   "model": {
-    "type": "minecraft:model",
-    "model": "runescore:item/rune"
+    "type": "runescore:fill",
+    "model": "%n:item/rune_%p",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": -1
+      },
+      {
+        "type": "runescore:rune",
+        "default": -1
+      }
+    ],
+    "fallback": "runescore:item/rune"
   }
 }

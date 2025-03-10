@@ -16,12 +16,12 @@ import java.util.List;
 
 public class RuneHelper {
 
-    public static List<RuneInfo> RUNE_INFOS = new ArrayList<>();
+    public static List<RuneTemplate> RUNE_TEMPLATES = new ArrayList<>();
     
     @Nullable
-    public static RuneInfo getRuneInfo(Identifier id) {
-        for (RuneInfo info : RUNE_INFOS) {
-            if (info.getIdentifier().equals(id)) {
+    public static RuneTemplate getRuneInfo(Identifier id) {
+        for (RuneTemplate info : RUNE_TEMPLATES) {
+            if (info.identifier().equals(id)) {
                 return info;
             }
         }
