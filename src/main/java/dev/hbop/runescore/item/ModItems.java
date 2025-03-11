@@ -1,8 +1,6 @@
 package dev.hbop.runescore.item;
 
 import dev.hbop.runescore.RunesCore;
-import dev.hbop.runescore.helper.RuneHelper;
-import dev.hbop.runescore.helper.RuneTemplate;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
@@ -21,17 +19,16 @@ public class ModItems {
     );
 
     public static void initialiseItems() {
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register((itemGroup) -> {
-            for (RuneTemplate template : RuneHelper.RUNE_TEMPLATES) {
-                for (int level = 0; level <= template.maxLevel(); level++) {
-                    int l = level;
-                    ItemStack stack = new ItemStack(RUNE);
-                    itemGroup.getContext().lookup().getOptional(RegistryKeys.ENCHANTMENT).ifPresent((registryWrapper) ->
-                            stack.applyComponentsFrom(template.getComponents(l, registryWrapper))
-                    );
-                    itemGroup.add(stack);
-                }
-            }
-        });
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register((itemGroup) -> 
+                itemGroup.getContext().lookup().getOptional(RunesCore.RUNE_TEMPLATE_REGISTRY).ifPresent((templateRegistry) -> 
+                        templateRegistry.streamEntries().forEach(reference -> 
+                                reference.value().forEachLevel(level -> {
+                                    ItemStack stack = new ItemStack(RUNE);
+                                    stack.applyComponentsFrom(reference.value().getComponents(reference.getKey().orElseThrow().getValue(), level));
+                                    itemGroup.add(stack);
+                                })
+                        )
+                )
+        );
     }
 }

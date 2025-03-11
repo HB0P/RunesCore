@@ -2,16 +2,12 @@ package dev.hbop.runescore.recipe;
 
 import dev.hbop.runescore.component.ModComponents;
 import dev.hbop.runescore.component.RuneComponent;
-import dev.hbop.runescore.helper.RuneHelper;
-import dev.hbop.runescore.helper.RuneTemplate;
-import dev.hbop.runescore.item.ModItems;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.recipe.SpecialCraftingRecipe;
 import net.minecraft.recipe.book.CraftingRecipeCategory;
 import net.minecraft.recipe.input.CraftingRecipeInput;
-import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.world.World;
@@ -30,10 +26,8 @@ public class RuneCorruptingRecipe extends SpecialCraftingRecipe {
                     ItemStack itemStack = input.getStackInSlot(j, i);
                     if (itemStack.isEmpty()) return false;
                     if (j == 1 && i == 1) {
-                        if (!itemStack.isOf(ModItems.RUNE)) return false;
                         RuneComponent component = itemStack.get(ModComponents.RUNE_COMPONENT);
                         if (component == null) return false;
-                        if (RuneHelper.getRuneInfo(component.identifier()) == null) return false;
                     } else if (!itemStack.isOf(Items.NETHER_WART)) {
                         return false;
                     }
@@ -47,14 +41,16 @@ public class RuneCorruptingRecipe extends SpecialCraftingRecipe {
 
     @Override
     public ItemStack craft(CraftingRecipeInput input, RegistryWrapper.WrapperLookup registries) {
-        RuneComponent runeComponent = input.getStackInSlot(1, 1).get(ModComponents.RUNE_COMPONENT);
+        ItemStack rune = input.getStackInSlot(1, 1);
+        RuneComponent runeComponent = rune.get(ModComponents.RUNE_COMPONENT);
         assert runeComponent != null;
-        RuneTemplate info = RuneHelper.getRuneInfo(runeComponent.identifier());
-        assert info != null;
-        ItemStack output = new ItemStack(ModItems.RUNE);
-        output.applyComponentsFrom(
-                info.getComponents(0, registries.getOrThrow(RegistryKeys.ENCHANTMENT))
-        );
+        
+        ItemStack output = rune.copy();
+        output.set(ModComponents.RUNE_COMPONENT, new RuneComponent(
+                runeComponent.identifier(),
+                0, 0,
+                runeComponent.enchantments()
+        ));
         return output;
     }
     

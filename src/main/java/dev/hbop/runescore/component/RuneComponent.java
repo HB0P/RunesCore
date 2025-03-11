@@ -19,16 +19,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.Consumer;
 
-public record RuneComponent(
-        Identifier identifier,
-        int level,
-        int size,
-        Map<TagKey<Item>, List<RegistryEntry<Enchantment>>> enchantments
-) implements TooltipAppender {
+public record RuneComponent(Identifier identifier, int level, int size, Map<TagKey<Item>, List<RegistryEntry<Enchantment>>> enchantments) implements TooltipAppender {
 
     public static final Codec<RuneComponent> CODEC = RecordCodecBuilder.create(
             instance -> instance.group(
-                    Identifier.CODEC.fieldOf("identifier").forGetter(RuneComponent::identifier),
+                    Identifier.CODEC.fieldOf("id").forGetter(RuneComponent::identifier),
                     Codec.INT.fieldOf("level").forGetter(RuneComponent::level),
                     Codec.INT.optionalFieldOf("size", 0).forGetter(RuneComponent::size),
                     Codec.unboundedMap(TagKey.codec(RegistryKeys.ITEM), Codecs.listOrSingle(Enchantment.ENTRY_CODEC)).optionalFieldOf("enchantments", Map.of()).forGetter(RuneComponent::enchantments)
