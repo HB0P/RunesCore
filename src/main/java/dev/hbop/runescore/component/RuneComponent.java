@@ -2,6 +2,7 @@ package dev.hbop.runescore.component;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import net.minecraft.component.ComponentsAccess;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.item.Item;
 import net.minecraft.item.tooltip.TooltipAppender;
@@ -31,7 +32,7 @@ public record RuneComponent(Identifier identifier, int level, int size, Map<TagK
     );
 
     @Override
-    public void appendTooltip(Item.TooltipContext context, Consumer<Text> tooltip, TooltipType type) {
+    public void appendTooltip(Item.TooltipContext context, Consumer<Text> tooltip, TooltipType type, ComponentsAccess components) {
         if (level != 0) tooltip.accept(Text.translatable("item.rune.level", Text.translatable("enchantment.level." + level).formatted(Formatting.BLUE)).formatted(Formatting.GRAY));
         if (size != 0) tooltip.accept(Text.translatable("item.rune.size", Text.literal("" + size).formatted(Formatting.BLUE)).formatted(Formatting.GRAY));
         if (!enchantments.isEmpty()) {

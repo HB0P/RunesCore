@@ -2,6 +2,7 @@ package dev.hbop.runescore.component;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import net.minecraft.component.ComponentsAccess;
 import net.minecraft.item.Item;
 import net.minecraft.item.tooltip.TooltipAppender;
 import net.minecraft.item.tooltip.TooltipType;
@@ -33,7 +34,7 @@ public record RuneSlotsComponent(
     }
 
     @Override
-    public void appendTooltip(Item.TooltipContext context, Consumer<Text> tooltip, TooltipType type) {
+    public void appendTooltip(Item.TooltipContext context, Consumer<Text> tooltip, TooltipType type, ComponentsAccess components) {
         tooltip.accept(
                 Text.translatable("item.rune.runes").formatted(Formatting.GRAY).append(
                         Text.literal(countUsedSlots() + "/" + maxSlots).formatted(Formatting.BLUE)

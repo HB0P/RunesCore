@@ -14,6 +14,7 @@ import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.entity.model.BookModel;
 import net.minecraft.client.render.entity.model.EntityModelLayers;
 import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.entry.RegistryEntry;
@@ -79,19 +80,15 @@ public class NewEnchantmentScreen extends ForgingScreen<NewEnchantmentScreenHand
             if (enchantments == null) {
                 text = Text.translatable("container.enchantment.incompatible");
             }
-            //else if (EnchantmentHelper.getLevel(enchantment, item) == runeComponent.level()) {
-            //    text = Text.translatable("container.enchantment.equal");
-            //}
+            else if (EnchantmentHelper.getLevel(enchantment, item) == runeComponent.level()) {
+                text = Text.translatable("container.enchantment.equal");
+            }
             else if (lapis.getCount() < runeComponent.size()) {
                 text = Text.translatable("container.enchantment.inadequate_lapis");
             }
             else if (output.isEmpty()) {
                 text = Text.translatable("container.enchantment.full");
             }
-            //else if (EnchantmentHelper.getLevel(enchantment, item) > runeComponent.level()) {
-            //    text = Text.translatable("container.enchantment.downgrade");
-            //    color = 16752736;
-            //}
         }
         if (text != null) {
             int k = this.backgroundWidth - 8 - this.textRenderer.getWidth(text) - 2;
@@ -116,7 +113,7 @@ public class NewEnchantmentScreen extends ForgingScreen<NewEnchantmentScreenHand
     private void drawBook(DrawContext context, float x, float y, float delta) {
         float f = MathHelper.lerp(delta, this.pageTurningSpeed, this.nextPageTurningSpeed);
         float g = MathHelper.lerp(delta, this.pageAngle, this.nextPageAngle);
-        DiffuseLighting.method_34742();
+        DiffuseLighting.enableGuiShaderLighting();
         context.getMatrices().push();
         context.getMatrices().translate(x, y, 100.0F);
         context.getMatrices().scale(-40.0F, 40.0F, 40.0F);
