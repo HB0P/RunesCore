@@ -1,4 +1,4 @@
-package dev.hbop.runescore.mixin.enchantment;
+package dev.hbop.runescore.mixin;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
@@ -15,6 +15,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(TradeOffers.EnchantBookFactory.class)
 public abstract class M_EnchantBookFactory {
     
+    // remove enchanted books from villagers
     @Inject(
             method = "create",
             at = @At("HEAD"),

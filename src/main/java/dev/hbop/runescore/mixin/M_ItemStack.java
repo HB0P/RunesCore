@@ -1,5 +1,6 @@
-package dev.hbop.runescore.mixin.enchantment;
+package dev.hbop.runescore.mixin;
 
+import dev.hbop.runescore.component.AbstractRuneComponent;
 import dev.hbop.runescore.component.ModComponents;
 import net.minecraft.component.ComponentType;
 import net.minecraft.component.type.TooltipDisplayComponent;
@@ -29,7 +30,9 @@ public abstract class M_ItemStack {
             at = @At("HEAD")
     )
     private void appendTooltip(Item.TooltipContext context, TooltipDisplayComponent displayComponent, @Nullable PlayerEntity player, TooltipType type, Consumer<Text> textConsumer, CallbackInfo ci) {
-        this.appendComponentTooltip(ModComponents.RUNE_COMPONENT, context, displayComponent, textConsumer, type);
-        this.appendComponentTooltip(ModComponents.RUNE_SLOTS_COMPONENT, context, displayComponent, textConsumer, type);
+        for (ComponentType<? extends AbstractRuneComponent> componentType : ModComponents.getRuneComponentTypes()) {
+            this.appendComponentTooltip(componentType, context, displayComponent, textConsumer, type);
+        }
+        this.appendComponentTooltip(ModComponents.APPLIED_RUNES_COMPONENT, context, displayComponent, textConsumer, type);
     }
 }

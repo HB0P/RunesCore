@@ -1,4 +1,4 @@
-package dev.hbop.runescore.mixin.enchantment;
+package dev.hbop.runescore.mixin;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;

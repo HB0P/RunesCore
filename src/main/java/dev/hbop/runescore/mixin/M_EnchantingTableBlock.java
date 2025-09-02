@@ -1,7 +1,7 @@
-package dev.hbop.runescore.mixin.enchantment;
+package dev.hbop.runescore.mixin;
 
 import com.llamalad7.mixinextras.sugar.Local;
-import dev.hbop.runescore.screen.NewEnchantmentScreenHandler;
+import dev.hbop.runescore.NewEnchantmentScreenHandler;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.EnchantingTableBlock;
 import net.minecraft.screen.NamedScreenHandlerFactory;

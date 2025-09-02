@@ -1,17 +1,17 @@
-package dev.hbop.runescore.mixin.enchantment;
+package dev.hbop.runescore.mixin;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.loot.context.LootContext;
-import net.minecraft.loot.function.SetEnchantmentsLootFunction;
+import net.minecraft.loot.function.EnchantRandomlyLootFunction;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(SetEnchantmentsLootFunction.class)
-public abstract class M_SetEnchantmentsLootFunction {
-
+@Mixin(EnchantRandomlyLootFunction.class)
+public abstract class M_EnchantRandomlyLootFunction {
+    
     // remove enchanted books from loot
     @Inject(
             method = "process",

@@ -5,12 +5,11 @@
 	"item.rune.level": "Level %s",
 	"item.rune.size": "Size %s",
 	"item.rune.when_applied_to": "When applied to %s:",
-	"item.rune.removes": "Removes %s",
+	"item.rune.removes": "Removes:",
+	"item.rune.removes_enchantments": "Removes runes with:",
+	"item.rune.runes": "Runes: %s",
 	
-	"item.rune.runes": "Runes: ",
 	"container.enchantment.incompatible": "Incompatible Rune",
 	"container.enchantment.full": "Rune Slots Full",
-	"container.enchantment.inadequate_lapis": "Inadequate Lapis",
-	"container.enchantment.equal": "Equal Enchantments",
-	"container.enchantment.downgrade": "Downgrading"
+	"container.enchantment.inadequate_lapis": "Inadequate Lapis"
 }
