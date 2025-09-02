@@ -1,8 +1,5 @@
 {
 	"item.runescore.rune": "Rune",
-	"item.runescore.rune_prefix": "Rune of %s",
-	"item.runescore.corrupted_rune_prefix": "Corrupted Rune of %s",
-	"item.rune.level": "Level %s",
 	"item.rune.size": "Size %s",
 	"item.rune.when_applied_to": "When applied to %s:",
 	"item.rune.removes": "Removes:",
