@@ -1,7 +1,9 @@
 package dev.hbop.runescore.component;
 
+import com.mojang.datafixers.util.Either;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import dev.hbop.runescore.registry.RuneTemplate;
 import net.minecraft.component.ComponentsAccess;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.item.Item;
@@ -20,16 +22,27 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Consumer;
+import java.util.function.Function;
 import java.util.function.Predicate;
 
 public record RuneComponent(Identifier id, int size, Map<TagKey<Item>, Map<RegistryEntry<Enchantment>, Integer>> enchantments) implements AbstractRuneComponent {
 
-    public static final Codec<RuneComponent> CODEC = RecordCodecBuilder.create(
-            instance -> instance.group(
-                    Identifier.CODEC.fieldOf("id").forGetter(RuneComponent::id),
-                    Codecs.NON_NEGATIVE_INT.optionalFieldOf("size", 0).forGetter(RuneComponent::size),
-                    Codecs.nonEmptyMap(Codec.unboundedMap(TagKey.codec(RegistryKeys.ITEM), Codecs.nonEmptyMap(Codec.unboundedMap(Enchantment.ENTRY_CODEC, Codec.intRange(1, 255))))).fieldOf("enchantments").forGetter(RuneComponent::enchantments)
-            ).apply(instance, RuneComponent::new)
+    private static final Codec<Either<RuneComponent, RegistryEntry<RuneTemplate>>> EITHER_CODEC = Codec.either(
+            RecordCodecBuilder.create(
+                    instance -> instance.group(
+                            Identifier.CODEC.fieldOf("id").forGetter(RuneComponent::id),
+                            Codecs.NON_NEGATIVE_INT.optionalFieldOf("size", 0).forGetter(RuneComponent::size),
+                            Codecs.nonEmptyMap(Codec.unboundedMap(TagKey.codec(RegistryKeys.ITEM), Codecs.nonEmptyMap(Codec.unboundedMap(Enchantment.ENTRY_CODEC, Codec.intRange(1, 255))))).fieldOf("enchantments").forGetter(RuneComponent::enchantments)
+                    ).apply(instance, RuneComponent::new)
+            ),
+            RuneTemplate.ENTRY_CODEC
+    );
+    public static final Codec<RuneComponent> CODEC = EITHER_CODEC.xmap(
+            either -> either.map(
+                    Function.identity(),
+                    RuneTemplate::toRuneComponent
+            ),
+            Either::left
     );
 
     @Override

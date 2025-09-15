@@ -1,7 +1,9 @@
 package dev.hbop.runescore.component;
 
+import com.mojang.datafixers.util.Either;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import dev.hbop.runescore.registry.RuneTemplate;
 import net.minecraft.component.ComponentsAccess;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.item.Item;
@@ -20,15 +22,26 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Consumer;
+import java.util.function.Function;
 import java.util.function.Predicate;
 
 public record CorruptedRuneComponent(List<Identifier> targetRunes, List<RegistryEntry<Enchantment>> targetEnchantments) implements AbstractRuneComponent {
 
-    public static final Codec<CorruptedRuneComponent> CODEC = RecordCodecBuilder.create(
-            instance -> instance.group(
-                    Codecs.listOrSingle(Identifier.CODEC).optionalFieldOf("target_runes", List.of()).forGetter(CorruptedRuneComponent::targetRunes),
-                    Codecs.listOrSingle(Enchantment.ENTRY_CODEC).optionalFieldOf("target_enchantments", List.of()).forGetter(CorruptedRuneComponent::targetEnchantments)
-            ).apply(instance, CorruptedRuneComponent::new)
+    public static final Codec<Either<CorruptedRuneComponent, RegistryEntry<RuneTemplate>>> EITHER_CODEC = Codec.either(
+            RecordCodecBuilder.create(
+                    instance -> instance.group(
+                            Codecs.listOrSingle(Identifier.CODEC).optionalFieldOf("target_runes", List.of()).forGetter(CorruptedRuneComponent::targetRunes), 
+                            Codecs.listOrSingle(Enchantment.ENTRY_CODEC).optionalFieldOf("target_enchantments", List.of()).forGetter(CorruptedRuneComponent::targetEnchantments)
+                    ).apply(instance, CorruptedRuneComponent::new)
+            ),
+            RuneTemplate.ENTRY_CODEC
+    );
+    public static final Codec<CorruptedRuneComponent> CODEC = EITHER_CODEC.xmap(
+            either -> either.map(
+                    Function.identity(),
+                    RuneTemplate::toCorruptedRuneComponent
+            ),
+            Either::left
     );
 
     @Override

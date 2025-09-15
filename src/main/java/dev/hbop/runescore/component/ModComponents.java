@@ -61,7 +61,5 @@ public class ModComponents {
         );
     }
     
-    public static void initialiseComponents() {
-
-    }
+    public static void register() {}
 }
