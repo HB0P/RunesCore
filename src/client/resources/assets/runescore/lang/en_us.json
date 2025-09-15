@@ -1,5 +1,6 @@
 {
 	"item.runescore.rune": "Rune",
+	"item.rune.corrupted": "Corrupted %s",
 	"item.rune.size": "Size %s",
 	"item.rune.when_applied_to": "When applied to %s:",
 	"item.rune.removes": "Removes:",

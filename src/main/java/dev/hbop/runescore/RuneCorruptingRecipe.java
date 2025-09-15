@@ -2,6 +2,8 @@ package dev.hbop.runescore;
 
 import dev.hbop.runescore.component.AbstractRuneComponent;
 import dev.hbop.runescore.component.ModComponents;
+import net.minecraft.component.ComponentType;
+import net.minecraft.component.DataComponentTypes;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.RecipeSerializer;
@@ -11,6 +13,7 @@ import net.minecraft.recipe.input.CraftingRecipeInput;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.text.Text;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.world.World;
 
@@ -57,7 +60,14 @@ public class RuneCorruptingRecipe extends SpecialCraftingRecipe {
         components.sort(Comparator.comparingInt(AbstractRuneComponent::corruptingPriority));
         AbstractRuneComponent component = components.getFirst();
         
-        ItemStack output = new ItemStack(ModItems.RUNE);
+        ItemStack output = rune.copy();
+        for (ComponentType<? extends AbstractRuneComponent> componentType : ModComponents.getRuneComponentTypes()) {
+            output.remove(componentType);
+        }
+        Text name = rune.get(DataComponentTypes.ITEM_NAME);
+        if (name != null) {
+            output.set(DataComponentTypes.ITEM_NAME, Text.translatable("item.rune.corrupted", name));
+        }
         output.set(ModComponents.CORRUPTED_RUNE_COMPONENT, component.corrupt());
         return output;
     }
