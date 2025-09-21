@@ -55,17 +55,21 @@ public record RuneTemplate(int size, Map<TagKey<Item>, Map<RegistryEntry<Enchant
         return rune.value().toCorruptedRuneComponent();
     }
     
-    private ComponentMap getComponents(Identifier id) {
+    private ComponentMap getComponents(Identifier id, boolean setName, boolean setModel) {
         ComponentMap.Builder builder = ComponentMap.builder();
         builder.add(ModComponents.RUNE_COMPONENT, toRuneComponent(id));
         builder.add(ModComponents.CORRUPTED_RUNE_COMPONENT, toCorruptedRuneComponent());
-        builder.add(DataComponentTypes.ITEM_NAME, Text.translatable("item." + id.getNamespace() + ".rune." + id.getPath()));
-        builder.add(DataComponentTypes.ITEM_MODEL, id.withPath("rune/" + id.getPath()));
+        if (setName) builder.add(DataComponentTypes.ITEM_NAME, Text.translatable("item." + id.getNamespace() + ".rune." + id.getPath()));
+        if (setModel) builder.add(DataComponentTypes.ITEM_MODEL, id.withPath("rune/" + id.getPath()));
         return builder.build();
     }
     
+    public static ComponentMap getComponents(RegistryEntry<RuneTemplate> rune, boolean setName, boolean setModel) {
+        return rune.value().getComponents(rune.getKey().orElseThrow().getValue(), setName, setModel);
+    }
+    
     public static ComponentMap getComponents(RegistryEntry<RuneTemplate> rune) {
-        return rune.value().getComponents(rune.getKey().orElseThrow().getValue());
+        return rune.value().getComponents(rune.getKey().orElseThrow().getValue(), true, true);
     }
     
     public static void register() {

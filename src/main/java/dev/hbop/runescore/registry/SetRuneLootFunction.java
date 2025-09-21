@@ -1,5 +1,6 @@
 package dev.hbop.runescore.registry;
 
+import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import dev.hbop.runescore.RunesCore;
@@ -18,7 +19,11 @@ public class SetRuneLootFunction extends ConditionalLootFunction {
     
     public static final MapCodec<SetRuneLootFunction> CODEC = RecordCodecBuilder.mapCodec(
             instance -> addConditionsField(instance).and(
-                    RuneTemplate.ENTRY_CODEC.fieldOf("rune").forGetter(SetRuneLootFunction::getRune)
+                    instance.group(
+                            RuneTemplate.ENTRY_CODEC.fieldOf("rune").forGetter(SetRuneLootFunction::getRune),
+                            Codec.BOOL.optionalFieldOf("set_name", true).forGetter(SetRuneLootFunction::getSetName),
+                            Codec.BOOL.optionalFieldOf("set_model", true).forGetter(SetRuneLootFunction::getSetModel)
+                    )
             ).apply(instance, SetRuneLootFunction::new)
     );
 
@@ -29,14 +34,26 @@ public class SetRuneLootFunction extends ConditionalLootFunction {
     );
 
     private final RegistryEntry<RuneTemplate> rune;
+    private final boolean setName;
+    private final boolean setModel;
     
-    protected SetRuneLootFunction(List<LootCondition> conditions, RegistryEntry<RuneTemplate> rune) {
+    protected SetRuneLootFunction(List<LootCondition> conditions, RegistryEntry<RuneTemplate> rune, boolean setName, boolean setModel) {
         super(conditions);
         this.rune = rune;
+        this.setName = setName;
+        this.setModel = setModel;
     }
 
     public RegistryEntry<RuneTemplate> getRune() {
         return this.rune;
+    }
+    
+    public boolean getSetName() {
+        return this.setName;
+    }
+    
+    public boolean getSetModel() {
+        return this.setModel;
     }
 
     @Override
@@ -46,7 +63,7 @@ public class SetRuneLootFunction extends ConditionalLootFunction {
 
     @Override
     protected ItemStack process(ItemStack stack, LootContext context) {
-        stack.applyComponentsFrom(RuneTemplate.getComponents(this.rune));
+        stack.applyComponentsFrom(RuneTemplate.getComponents(rune, setName, setModel));
         return stack;
     }
     
