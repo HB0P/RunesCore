@@ -11,6 +11,7 @@ import net.minecraft.item.tooltip.TooltipAppender;
 import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.screen.ScreenTexts;
+import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
@@ -50,12 +51,15 @@ public record AppliedRunesComponent(Map<Identifier, AppliedRune> runes) implemen
         Set<RegistryEntry<Enchantment>> enchantments = new HashSet<>(enchantmentsComponent.getEnchantments());
         
         for (Map.Entry<Identifier, AppliedRune> entry : runes.entrySet()) {
-            tooltip.accept(Text.translatable("item." + entry.getKey().getNamespace() + ".rune." + entry.getKey().getPath()).formatted(Formatting.BLUE).append(Text.literal(" (" + entry.getValue().size + ")").formatted(Formatting.GRAY)));
+            MutableText runeName = Text.translatable("item." + entry.getKey().getNamespace() + ".rune." + entry.getKey().getPath()).formatted(Formatting.BLUE);
+            if (entry.getValue().size != 0) runeName.append(Text.literal(" (" + entry.getValue().size + ")").formatted(Formatting.GRAY));
+            tooltip.accept(runeName);
+            
             for (Map.Entry<RegistryEntry<Enchantment>, Integer> enchantment : entry.getValue().enchantments.entrySet()) {
                 Formatting formatting;
                 if (enchantments.contains(enchantment.getKey()) && enchantmentsComponent.getLevel(enchantment.getKey()) == enchantment.getValue()) {
                     enchantments.remove(enchantment.getKey());
-                    formatting = Formatting.WHITE;
+                    formatting = Formatting.LIGHT_PURPLE;
                 }
                 else {
                     formatting = Formatting.GRAY;

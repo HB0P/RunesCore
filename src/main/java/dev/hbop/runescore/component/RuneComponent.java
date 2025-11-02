@@ -82,7 +82,7 @@ public record RuneComponent(Identifier id, int size, Map<TagKey<Item>, Map<Regis
         for (TagKey<Item> tag : enchantments.keySet()) {
             tooltip.accept(Text.translatable("item.rune.when_applied_to", Text.empty().append(tag.getName()).formatted(Formatting.GREEN)).formatted(Formatting.GRAY));
             for (Map.Entry<RegistryEntry<Enchantment>, Integer> enchantment : enchantments.get(tag).entrySet()) {
-                tooltip.accept(ScreenTexts.space().append(Enchantment.getName(enchantment.getKey(), enchantment.getValue())));
+                tooltip.accept(ScreenTexts.space().append(Enchantment.getName(enchantment.getKey(), enchantment.getValue()).copy().formatted(Formatting.LIGHT_PURPLE)));
             }
         }
     }
