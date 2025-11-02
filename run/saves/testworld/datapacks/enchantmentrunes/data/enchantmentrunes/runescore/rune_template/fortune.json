@@ -1,0 +1,9 @@
+{
+  "max_level": 3,
+  "base_size": 0,
+  "bonus_size": 3,
+  "enchantments": {
+    "#minecraft:enchantable/mining_loot": "minecraft:fortune"
+  },
+  "item_model": "enchantmentrunes:rune_fortune"
+}

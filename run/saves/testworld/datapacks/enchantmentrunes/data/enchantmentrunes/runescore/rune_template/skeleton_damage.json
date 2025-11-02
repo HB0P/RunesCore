@@ -1,0 +1,10 @@
+{
+  "max_level": 5,
+  "base_size": 0,
+  "bonus_size": 1,
+  "enchantments": {
+    "#enchantmentrunes:enchantable/melee_weapons": "enchantmentrunes:skeleton_damage",
+    "#enchantmentrunes:enchantable/arrow_weapons": "enchantmentrunes:skeleton_arrow_damage"
+  },
+  "item_model": "enchantmentrunes:rune_skeleton_damage"
+}

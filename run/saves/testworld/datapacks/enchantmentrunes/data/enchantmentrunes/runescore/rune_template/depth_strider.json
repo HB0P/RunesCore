@@ -1,0 +1,9 @@
+{
+  "max_level": 3,
+  "base_size": 0,
+  "bonus_size": 1,
+  "enchantments": {
+    "#minecraft:enchantable/foot_armor": "minecraft:depth_strider"
+  },
+  "item_model": "enchantmentrunes:rune_depth_strider"
+}

@@ -1,0 +1,10 @@
+{
+  "enchantments": {
+    "#minecraft:enchantable/mining": {
+      "minecraft:efficiency": 1
+    },
+    "#minecraft:enchantable/crossbow": {
+      "minecraft:quick_charge": 1
+    }
+  }
+}

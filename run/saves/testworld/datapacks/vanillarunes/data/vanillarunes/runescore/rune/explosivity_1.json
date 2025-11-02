@@ -1,0 +1,18 @@
+{
+  "enchantments": {
+    "#minecraft:enchantable/armor": {
+      "minecraft:blast_protection": 1
+    },
+    "#minecraft:enchantable/sword": {
+      "minecraft:knockback": 1
+    },
+    "#minecraft:enchantable/bow": {
+      "minecraft:punch": 1
+    }
+  },
+  "removes_enchantments": [
+    "minecraft:fire_protection",
+    "minecraft:protection",
+    "minecraft:projectile_protection"
+  ]
+}

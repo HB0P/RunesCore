@@ -1,0 +1,10 @@
+{
+  "enchantments": {
+    "#minecraft:enchantable/foot_armor": {
+      "minecraft:feather_falling": 1
+    },
+    "#minecraft:enchantable/sword": {
+      "minecraft:sweeping_edge": 1
+    }
+  }
+}

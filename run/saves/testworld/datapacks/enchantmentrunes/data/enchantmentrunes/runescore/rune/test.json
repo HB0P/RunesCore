@@ -1,0 +1,8 @@
+{
+  "size": 3,
+  "enchantments": {
+    "#minecraft:enchantable/sword": {
+      "minecraft:fire_aspect": 1
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "targets": "#minecraft:enchantable/sword",
+  "components": {
+    "runescore:rune_capacity": 20
+  }
+}

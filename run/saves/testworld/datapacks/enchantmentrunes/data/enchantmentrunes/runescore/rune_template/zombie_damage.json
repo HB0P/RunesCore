@@ -1,0 +1,10 @@
+{
+  "max_level": 5,
+  "base_size": 0,
+  "bonus_size": 1,
+  "enchantments": {
+    "#enchantmentrunes:enchantable/melee_weapons": "enchantmentrunes:zombie_damage",
+    "#enchantmentrunes:enchantable/arrow_weapons": "enchantmentrunes:zombie_arrow_damage"
+  },
+  "item_model": "enchantmentrunes:rune_zombie_damage"
+}

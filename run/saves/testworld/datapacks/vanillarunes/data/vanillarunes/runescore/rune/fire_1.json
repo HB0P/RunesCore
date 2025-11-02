@@ -1,0 +1,15 @@
+{
+  "enchantments": {
+    "#minecraft:enchantable/fire_aspect": {
+      "minecraft:fire_aspect": 1
+    },
+    "#minecraft:enchantable/armor": {
+      "minecraft:fire_protection": 1
+    }
+  },
+  "removes_enchantments": [
+    "minecraft:protection",
+    "minecraft:blast_protection",
+    "minecraft:projectile_protection"
+  ]
+}

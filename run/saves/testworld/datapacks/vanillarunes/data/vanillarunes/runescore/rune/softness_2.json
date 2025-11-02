@@ -1,0 +1,16 @@
+{
+  "enchantments": {
+    "#minecraft:enchantable/foot_armor": {
+      "minecraft:feather_falling": 2
+    },
+    "#minecraft:enchantable/mining_loot": {
+      "minecraft:silk_touch": 1
+    },
+    "#minecraft:enchantable/sword": {
+      "minecraft:sweeping_edge": 2
+    }
+  },
+  "removes_enchantments": [
+    "minecraft:fortune"
+  ]
+}

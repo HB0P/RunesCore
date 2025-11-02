@@ -1,0 +1,9 @@
+{
+  "max_level": 2,
+  "base_size": 1,
+  "bonus_size": 0,
+  "enchantments": {
+    "#minecraft:enchantable/foot_armor": "minecraft:frost_walker"
+  },
+  "item_model": "enchantmentrunes:rune_frost_walker"
+}

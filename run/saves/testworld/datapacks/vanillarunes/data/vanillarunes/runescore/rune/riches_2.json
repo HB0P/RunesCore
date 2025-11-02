@@ -1,0 +1,22 @@
+{
+  "enchantments": {
+    "#minecraft:enchantable/mining_loot": {
+      "minecraft:fortune": 1
+    },
+    "#minecraft:enchantable/sword": {
+      "minecraft:looting": 1
+    },
+    "#minecraft:enchantable/fishing": {
+      "minecraft:luck_of_the_sea": 2
+    },
+    "#minecraft:enchantable/armor": {
+      "minecraft:projectile_protection": 2
+    }
+  },
+  "removes_enchantments": [
+    "minecraft:silk_touch",
+    "minecraft:protection",
+    "minecraft:blast_protection",
+    "minecraft:fire_protection"
+  ]
+}

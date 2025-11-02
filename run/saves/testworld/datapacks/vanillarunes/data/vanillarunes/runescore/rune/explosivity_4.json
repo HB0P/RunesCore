@@ -1,0 +1,25 @@
+{
+  "enchantments": {
+    "#minecraft:enchantable/mace": {
+      "minecraft:wind_burst": 3
+    },
+    "#minecraft:enchantable/armor": {
+      "minecraft:blast_protection": 4
+    },
+    "#minecraft:enchantable/trident": {
+      "minecraft:channeling": 1
+    },
+    "#minecraft:enchantable/sword": {
+      "minecraft:knockback": 2
+    },
+    "#minecraft:enchantable/bow": {
+      "minecraft:punch": 2
+    }
+  },
+  "removes_enchantments": [
+    "minecraft:fire_protection",
+    "minecraft:protection",
+    "minecraft:projectile_protection",
+    "minecraft:riptide"
+  ]
+}

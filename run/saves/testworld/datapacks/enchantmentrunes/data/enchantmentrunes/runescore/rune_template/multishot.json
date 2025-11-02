@@ -1,0 +1,9 @@
+{
+  "max_level": 1,
+  "base_size": 3,
+  "bonus_size": 0,
+  "enchantments": {
+    "#minecraft:enchantable/crossbow": "minecraft:multishot"
+  },
+  "item_model": "enchantmentrunes:rune_multishot"
+}

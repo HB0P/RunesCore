@@ -1,0 +1,12 @@
+{
+  "size": 4,
+  "enchantments": {
+    "#minecraft:enchantable/sword": {
+      "minecraft:sharpness": 3,
+      "minecraft:sweeping_edge": 1
+    },
+    "#minecraft:enchantable/bow": {
+      "minecraft:power": 3
+    }
+  }
+}

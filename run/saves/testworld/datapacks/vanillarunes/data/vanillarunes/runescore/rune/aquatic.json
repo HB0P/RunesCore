@@ -1,0 +1,25 @@
+{
+  "enchantments": {
+    "#minecraft:enchantable/head_armor": {
+      "minecraft:respiration": 3
+    },
+    "#minecraft:enchantable/foot_armor": {
+      "minecraft:depth_strider": 3
+    },
+    "#minecraft:enchantable/trident": {
+      "minecraft:riptide": 3
+    },
+    "#minecraft:enchantable/weapon": {
+      "minecraft:smite": 5
+    }
+  },
+  "removes_enchantments": [
+    "minecraft:frost_walker",
+    "minecraft:channeling",
+    "minecraft:loyalty",
+    "minecraft:bane_of_arthropods",
+    "minecraft:sharpness",
+    "minecraft:breach",
+    "minecraft:density"
+  ]
+}

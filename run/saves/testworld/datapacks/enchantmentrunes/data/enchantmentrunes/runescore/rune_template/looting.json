@@ -1,0 +1,9 @@
+{
+  "max_level": 3,
+  "base_size": 0,
+  "bonus_size": 2,
+  "enchantments": {
+    "#minecraft:enchantable/sword": "minecraft:looting"
+  },
+  "item_model": "enchantmentrunes:rune_looting"
+}

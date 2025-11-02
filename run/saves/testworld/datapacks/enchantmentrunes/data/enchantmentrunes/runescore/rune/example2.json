@@ -1,0 +1,9 @@
+{
+  "size": 2,
+  "enchantments": {
+    "#minecraft:enchantable/mining_loot": {
+      "minecraft:silk_touch": 1
+    }
+  },
+  "removes_enchantments": "minecraft:fortune"
+}

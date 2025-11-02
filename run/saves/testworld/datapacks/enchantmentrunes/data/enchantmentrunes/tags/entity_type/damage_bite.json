@@ -1,0 +1,18 @@
+{
+  "values": [
+    "minecraft:spider",
+    "minecraft:cave_spider",
+    "minecraft:drowned",
+    "minecraft:husk",
+    "minecraft:zombie",
+    "minecraft:zombie_villager",
+    "minecraft:endermite",
+    "minecraft:phantom",
+    "minecraft:silverfish",
+    "minecraft:zombified_piglin",
+    "minecraft:dolphin",
+    "minecraft:panda",
+    "minecraft:polar_bear",
+    "minecraft:wolf"
+  ]
+}

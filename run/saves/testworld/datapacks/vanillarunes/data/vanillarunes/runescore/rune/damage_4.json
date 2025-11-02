@@ -1,0 +1,28 @@
+{
+  "enchantments": {
+    "#minecraft:enchantable/mace": {
+      "minecraft:density": 4
+    },
+    "#minecraft:enchantable/trident": {
+      "minecraft:impaling": 4
+    },
+    "#minecraft:enchantable/crossbow": {
+      "minecraft:piercing": 4
+    },
+    "#minecraft:enchantable/bow": {
+      "minecraft:power": 4
+    },
+    "#minecraft:enchantable/sharp_weapon": {
+      "minecraft:sharpness": 4
+    },
+    "#minecraft:enchantable/armor": {
+      "minecraft:thorns": 3
+    }
+  },
+  "removes_enchantments": [
+    "minecraft:breach",
+    "minecraft:bane_of_arthropods",
+    "minecraft:smite",
+    "minecraft:multishot"
+  ]
+}

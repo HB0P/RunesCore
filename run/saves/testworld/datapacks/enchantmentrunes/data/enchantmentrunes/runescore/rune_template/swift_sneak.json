@@ -1,0 +1,9 @@
+{
+  "max_level": 3,
+  "base_size": 0,
+  "bonus_size": 1,
+  "enchantments": {
+    "#minecraft:enchantable/leg_armor": "minecraft:swift_sneak"
+  },
+  "item_model": "enchantmentrunes:rune_swift_sneak"
+}

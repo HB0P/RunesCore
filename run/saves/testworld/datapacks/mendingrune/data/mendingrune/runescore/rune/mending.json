@@ -1,0 +1,8 @@
+{
+  "size": 5,
+  "enchantments": {
+    "#mendingrune:mending_items": {
+      "minecraft:mending": 1
+    }
+  }
+}

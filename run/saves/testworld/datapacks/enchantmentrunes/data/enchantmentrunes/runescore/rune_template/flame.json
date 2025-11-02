@@ -1,0 +1,10 @@
+{
+  "max_level": 2,
+  "base_size": 0,
+  "bonus_size": 1,
+  "enchantments": {
+    "#minecraft:enchantable/bow": "minecraft:flame",
+    "#minecraft:enchantable/fire_aspect": "minecraft:fire_aspect"
+  },
+  "item_model": "enchantmentrunes:rune_flame"
+}

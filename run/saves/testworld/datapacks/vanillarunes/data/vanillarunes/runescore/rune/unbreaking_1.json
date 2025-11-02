@@ -1,0 +1,7 @@
+{
+  "enchantments": {
+    "#minecraft:enchantable/durability": {
+      "minecraft:unbreaking": 1
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "runescore:item/rune",
+    "layer1": "enchantmentrunes:item/rune_channeling"
+  }
+}

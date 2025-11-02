@@ -1,0 +1,9 @@
+{
+  "max_level": 3,
+  "base_size": 2,
+  "bonus_size": 1,
+  "enchantments": {
+    "#minecraft:enchantable/trident": "minecraft:riptide"
+  },
+  "item_model": "enchantmentrunes:rune_riptide"
+}

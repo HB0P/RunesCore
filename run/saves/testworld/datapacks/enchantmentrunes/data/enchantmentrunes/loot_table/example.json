@@ -1,0 +1,19 @@
+{
+  "pools": [
+    {
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "runescore:rune",
+          "functions": [
+            {
+              "function": "runescore:set_rune",
+              "rune": "enchantmentrunes:example"
+            }
+          ]
+        }
+      ],
+      "rolls": 1
+    }
+  ]
+}

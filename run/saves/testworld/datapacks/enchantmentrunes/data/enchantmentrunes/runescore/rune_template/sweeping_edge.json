@@ -1,0 +1,9 @@
+{
+  "max_level": 3,
+  "base_size": 0,
+  "bonus_size": 1,
+  "enchantments": {
+    "#minecraft:enchantable/sword": "minecraft:sweeping_edge"
+  },
+  "item_model": "enchantmentrunes:rune_sweeping_edge"
+}

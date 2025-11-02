@@ -1,0 +1,19 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "enchantmentrunes:item/rune_aqua_affinity",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": -1
+      },
+      {
+        "type": "runescore:rune",
+        "colors": [
+          4294923605,
+          4294923775
+        ]
+      }
+    ]
+  }
+}

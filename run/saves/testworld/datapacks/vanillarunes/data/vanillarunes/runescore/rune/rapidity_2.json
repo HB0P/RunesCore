@@ -1,0 +1,13 @@
+{
+  "enchantments": {
+    "#minecraft:enchantable/mining": {
+      "minecraft:efficiency": 2
+    },
+    "#minecraft:enchantable/crossbow": {
+      "minecraft:quick_charge": 2
+    },
+    "#minecraft:enchantable/foot_armor": {
+      "minecraft:soul_speed": 1
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "max_level": 4,
+  "base_size": 0,
+  "bonus_size": 1,
+  "enchantments": {
+    "#minecraft:enchantable/armor": "enchantmentrunes:slash_protection"
+  },
+  "item_model": "enchantmentrunes:rune_slash_protection"
+}
