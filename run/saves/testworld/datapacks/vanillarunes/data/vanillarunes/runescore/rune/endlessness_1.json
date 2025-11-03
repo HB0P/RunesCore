@@ -1,0 +1,20 @@
+{
+  "enchantments": {
+    "#minecraft:enchantable/fishing": {
+      "minecraft:lure": 1
+    },
+    "#minecraft:enchantable/weapon": {
+      "minecraft:bane_of_arthropods": 1
+    },
+    "#minecraft:enchantable/foot_armor": {
+      "minecraft:frost_walker": 1
+    }
+  },
+  "removes_enchantments": [
+    "minecraft:smite",
+    "minecraft:sharpness",
+    "minecraft:breach",
+    "minecraft:density",
+    "minecraft:depth_strider"
+  ]
+}

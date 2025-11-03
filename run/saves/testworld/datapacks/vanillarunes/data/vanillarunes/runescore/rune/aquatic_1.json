@@ -1,0 +1,17 @@
+{
+  "enchantments": {
+    "#minecraft:enchantable/foot_armor": {
+      "minecraft:depth_strider": 1
+    },
+    "#minecraft:enchantable/weapon": {
+      "minecraft:smite": 1
+    }
+  },
+  "removes_enchantments": [
+    "minecraft:frost_walker",
+    "minecraft:bane_of_arthropods",
+    "minecraft:sharpness",
+    "minecraft:breach",
+    "minecraft:density"
+  ]
+}
