@@ -1,10 +1,13 @@
 {
   "enchantments": {
     "#minecraft:enchantable/head_armor": {
-      "minecraft:respiration": 1
+      "minecraft:respiration": 2
     },
     "#minecraft:enchantable/foot_armor": {
       "minecraft:depth_strider": 2
+    },
+    "#minecraft:enchantable/trident": {
+      "minecraft:riptide": 1
     },
     "#minecraft:enchantable/weapon": {
       "minecraft:smite": 2
@@ -13,6 +16,8 @@
   "removes_enchantments": [
     "minecraft:frost_walker",
     "minecraft:bane_of_arthropods",
+    "minecraft:channeling",
+    "minecraft:loyalty",
     "minecraft:sharpness",
     "minecraft:breach",
     "minecraft:density"

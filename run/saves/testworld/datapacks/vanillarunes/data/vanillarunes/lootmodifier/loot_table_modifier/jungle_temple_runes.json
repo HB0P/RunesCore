@@ -1,0 +1,31 @@
+{
+  "target": [
+    "minecraft:chests/jungle_temple"
+  ],
+  "pools": [
+    {
+      "conditions": [
+        {
+          "condition": "minecraft:random_chance",
+          "chance": 0.5
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "runescore:rune",
+          "functions": [
+            {
+              "function": "runescore:set_rune",
+              "rune": [
+                "vanillarunes:aquatic_3",
+                "vanillarunes:endlessness_3"
+              ]
+            }
+          ]
+        }
+      ],
+      "rolls": 1
+    }
+  ]
+}

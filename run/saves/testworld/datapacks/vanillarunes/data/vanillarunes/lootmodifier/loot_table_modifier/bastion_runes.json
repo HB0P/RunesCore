@@ -1,0 +1,29 @@
+{
+  "target": [
+    "minecraft:chests/bastion_treasure"
+  ],
+  "pools": [
+    {
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "runescore:rune",
+          "functions": [
+            {
+              "function": "runescore:set_rune",
+              "rune": [
+                "vanillarunes:fire_4",
+                "vanillarunes:riches_4"
+              ]
+            }
+          ]
+        }
+      ],
+      "rolls": {
+        "type": "minecraft:uniform",
+        "max": 2,
+        "min": 1
+      }
+    }
+  ]
+}

@@ -1,16 +1,16 @@
 {
   "enchantments": {
     "#minecraft:enchantable/head_armor": {
-      "minecraft:respiration": 2
+      "minecraft:respiration": 3
     },
     "#minecraft:enchantable/foot_armor": {
       "minecraft:depth_strider": 3
     },
     "#minecraft:enchantable/trident": {
-      "minecraft:riptide": 1
+      "minecraft:riptide": 2
     },
     "#minecraft:enchantable/weapon": {
-      "minecraft:smite": 3
+      "minecraft:smite": 4
     }
   },
   "removes_enchantments": [

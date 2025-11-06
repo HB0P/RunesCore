@@ -1,0 +1,55 @@
+{
+  "target": [
+    "minecraft:chests/shipwreck_treasure",
+    "minecraft:chests/igloo_chest",
+    "minecraft:chests/ruined_portal",
+    "minecraft:chests/buried_treasure",
+    "minecraft:chests/village/village_armorer",
+    "minecraft:chests/village/village_tooolsmith",
+    "minecraft:chests/village/village_weaponsmith",
+    "minecraft:chests/village/village_temple"
+  ],
+  "pools": [
+    {
+      "conditions": [
+        {
+          "condition": "minecraft:random_chance",
+          "chance": 0.75
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "runescore:rune",
+          "functions": [
+            {
+              "function": "runescore:set_rune",
+              "rune": [
+                "vanillarunes:aquatic_1",
+                "vanillarunes:aquatic_2",
+                "vanillarunes:armory_1",
+                "vanillarunes:armory_2",
+                "vanillarunes:damage_1",
+                "vanillarunes:damage_2",
+                "vanillarunes:endlessness_1",
+                "vanillarunes:endlessness_2",
+                "vanillarunes:explosivity_1",
+                "vanillarunes:explosivity_2",
+                "vanillarunes:fire_1",
+                "vanillarunes:fire_2",
+                "vanillarunes:rapidity_1",
+                "vanillarunes:rapidity_2",
+                "vanillarunes:riches_1",
+                "vanillarunes:riches_2",
+                "vanillarunes:softness_1",
+                "vanillarunes:softness_2",
+                "vanillarunes:unbreaking_1"
+              ]
+            }
+          ]
+        }
+      ],
+      "rolls": 1
+    }
+  ]
+}

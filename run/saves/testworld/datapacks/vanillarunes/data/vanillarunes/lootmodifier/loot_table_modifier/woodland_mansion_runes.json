@@ -1,0 +1,31 @@
+{
+  "target": [
+    "minecraft:chests/woodland_mansion"
+  ],
+  "pools": [
+    {
+      "conditions": [
+        {
+          "condition": "minecraft:random_chance",
+          "chance": 0.9
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "runescore:rune",
+          "functions": [
+            {
+              "function": "runescore:set_rune",
+              "rune": [
+                "vanillarunes:aquatic_4",
+                "vanillarunes:rapidity_4"
+              ]
+            }
+          ]
+        }
+      ],
+      "rolls": 1
+    }
+  ]
+}

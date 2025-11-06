@@ -10,10 +10,10 @@
       "minecraft:lure": 3
     },
     "#minecraft:enchantable/trident": {
-      "minecraft:loyalty": 2
+      "minecraft:loyalty": 3
     },
     "#minecraft:enchantable/weapon": {
-      "minecraft:bane_of_arthropods": 4
+      "minecraft:bane_of_arthropods": 5
     },
     "#minecraft:enchantable/foot_armor": {
       "minecraft:frost_walker": 2

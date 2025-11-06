@@ -7,10 +7,10 @@
       "minecraft:depth_strider": 3
     },
     "#minecraft:enchantable/trident": {
-      "minecraft:riptide": 2
+      "minecraft:riptide": 3
     },
     "#minecraft:enchantable/weapon": {
-      "minecraft:smite": 4
+      "minecraft:smite": 5
     }
   },
   "removes_enchantments": [

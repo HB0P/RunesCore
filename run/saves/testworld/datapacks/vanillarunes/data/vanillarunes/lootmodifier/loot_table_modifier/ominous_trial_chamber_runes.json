@@ -1,0 +1,31 @@
+{
+  "target": [
+    "minecraft:chests/trial_chambers/reward_ominous"
+  ],
+  "pools": [
+    {
+      "conditions": [
+        {
+          "condition": "minecraft:random_chance",
+          "chance": 0.2
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "runescore:rune",
+          "functions": [
+            {
+              "function": "runescore:set_rune",
+              "rune": [
+                "vanillarunes:explosivity_4",
+                "vanillarunes:armory_4"
+              ]
+            }
+          ]
+        }
+      ],
+      "rolls": 1
+    }
+  ]
+}

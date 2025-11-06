@@ -1,0 +1,26 @@
+{
+  "target": "minecraft:chests/ancient_city",
+  "pools": [
+    {
+      "conditions": [
+        {
+          "condition": "minecraft:random_chance",
+          "chance": 0.2
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "runescore:rune",
+          "functions": [
+            {
+              "function": "runescore:set_rune",
+              "rune": "vanillarunes:unbreaking_3"
+            }
+          ]
+        }
+      ],
+      "rolls": 1.0
+    }
+  ]
+}

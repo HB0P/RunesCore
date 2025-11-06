@@ -6,7 +6,8 @@ for name in os.listdir(path):
         f.write("""{
   "parent": "item/generated",
   "textures": {
-    "layer0": "runescore:item/rune"
+    "layer0": "runescore:item/rune",
+    "layer1": "vanillarunes:item/rune/""" + name[:-5] + """"
   }
 }
         """)

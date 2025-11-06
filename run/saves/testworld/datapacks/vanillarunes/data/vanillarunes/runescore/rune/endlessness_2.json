@@ -6,6 +6,9 @@
     "#minecraft:enchantable/fishing": {
       "minecraft:lure": 2
     },
+    "#minecraft:enchantable/trident": {
+      "minecraft:loyalty": 1
+    },
     "#minecraft:enchantable/weapon": {
       "minecraft:bane_of_arthropods": 2
     },
@@ -15,6 +18,7 @@
   },
   "removes_enchantments": [
     "minecraft:piercing",
+    "minecraft:riptide",
     "minecraft:smite",
     "minecraft:sharpness",
     "minecraft:breach",

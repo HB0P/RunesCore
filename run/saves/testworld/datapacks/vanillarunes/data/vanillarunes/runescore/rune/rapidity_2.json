@@ -8,6 +8,9 @@
     },
     "#minecraft:enchantable/foot_armor": {
       "minecraft:soul_speed": 1
+    },
+    "#minecraft:enchantable/leg_armor": {
+      "minecraft:swift_sneak": 1
     }
   }
 }

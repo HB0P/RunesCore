@@ -1,19 +1,19 @@
 {
   "enchantments": {
     "#minecraft:enchantable/mace": {
-      "minecraft:density": 4
+      "minecraft:density": 5
     },
     "#minecraft:enchantable/trident": {
-      "minecraft:impaling": 4
+      "minecraft:impaling": 5
     },
     "#minecraft:enchantable/crossbow": {
       "minecraft:piercing": 4
     },
     "#minecraft:enchantable/bow": {
-      "minecraft:power": 4
+      "minecraft:power": 5
     },
     "#minecraft:enchantable/sharp_weapon": {
-      "minecraft:sharpness": 4
+      "minecraft:sharpness": 5
     },
     "#minecraft:enchantable/armor": {
       "minecraft:thorns": 3

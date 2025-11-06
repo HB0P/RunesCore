@@ -4,7 +4,7 @@
       "minecraft:aqua_affinity": 1
     },
     "#minecraft:enchantable/mining": {
-      "minecraft:efficiency": 4
+      "minecraft:efficiency": 5
     },
     "#minecraft:enchantable/crossbow": {
       "minecraft:quick_charge": 3
@@ -13,7 +13,7 @@
       "minecraft:soul_speed": 3
     },
     "#minecraft:enchantable/leg_armor": {
-      "minecraft:swift_sneak": 2
+      "minecraft:swift_sneak": 3
     }
   }
 }

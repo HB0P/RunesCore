@@ -12,6 +12,7 @@ import net.minecraft.loot.function.LootFunctionType;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.entry.RegistryEntry;
+import net.minecraft.util.dynamic.Codecs;
 
 import java.util.List;
 
@@ -20,7 +21,7 @@ public class SetRuneLootFunction extends ConditionalLootFunction {
     public static final MapCodec<SetRuneLootFunction> CODEC = RecordCodecBuilder.mapCodec(
             instance -> addConditionsField(instance).and(
                     instance.group(
-                            RuneTemplate.ENTRY_CODEC.fieldOf("rune").forGetter(SetRuneLootFunction::getRune),
+                            Codecs.listOrSingle(RuneTemplate.ENTRY_CODEC).fieldOf("rune").forGetter(SetRuneLootFunction::getRune),
                             Codec.BOOL.optionalFieldOf("set_name", true).forGetter(SetRuneLootFunction::getSetName),
                             Codec.BOOL.optionalFieldOf("set_model", true).forGetter(SetRuneLootFunction::getSetModel)
                     )
@@ -33,18 +34,18 @@ public class SetRuneLootFunction extends ConditionalLootFunction {
             new LootFunctionType<>(SetRuneLootFunction.CODEC)
     );
 
-    private final RegistryEntry<RuneTemplate> rune;
+    private final List<RegistryEntry<RuneTemplate>> rune;
     private final boolean setName;
     private final boolean setModel;
     
-    protected SetRuneLootFunction(List<LootCondition> conditions, RegistryEntry<RuneTemplate> rune, boolean setName, boolean setModel) {
+    protected SetRuneLootFunction(List<LootCondition> conditions, List<RegistryEntry<RuneTemplate>> rune, boolean setName, boolean setModel) {
         super(conditions);
         this.rune = rune;
         this.setName = setName;
         this.setModel = setModel;
     }
 
-    public RegistryEntry<RuneTemplate> getRune() {
+    public List<RegistryEntry<RuneTemplate>> getRune() {
         return this.rune;
     }
     
@@ -63,7 +64,11 @@ public class SetRuneLootFunction extends ConditionalLootFunction {
 
     @Override
     protected ItemStack process(ItemStack stack, LootContext context) {
-        stack.applyComponentsFrom(RuneTemplate.getComponents(rune, setName, setModel));
+        RegistryEntry<RuneTemplate> chosenRune;
+        if (rune.size() == 1) chosenRune = rune.getFirst();
+        else chosenRune = rune.get(context.getRandom().nextInt(rune.size()));
+
+        stack.applyComponentsFrom(RuneTemplate.getComponents(chosenRune, setName, setModel));
         return stack;
     }
     

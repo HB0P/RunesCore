@@ -1,5 +1,8 @@
 {
   "enchantments": {
+    "#minecraft:enchantable/head_armor": {
+      "minecraft:respiration": 1
+    },
     "#minecraft:enchantable/foot_armor": {
       "minecraft:depth_strider": 1
     },

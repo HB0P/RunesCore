@@ -1,5 +1,8 @@
 {
   "enchantments": {
+    "#minecraft:enchantable/bow": {
+      "minecraft:infinity": 1
+    },
     "#minecraft:enchantable/crossbow": {
       "minecraft:multishot": 1
     },
@@ -7,10 +10,10 @@
       "minecraft:lure": 3
     },
     "#minecraft:enchantable/trident": {
-      "minecraft:loyalty": 1
+      "minecraft:loyalty": 2
     },
     "#minecraft:enchantable/weapon": {
-      "minecraft:bane_of_arthropods": 3
+      "minecraft:bane_of_arthropods": 4
     },
     "#minecraft:enchantable/foot_armor": {
       "minecraft:frost_walker": 2

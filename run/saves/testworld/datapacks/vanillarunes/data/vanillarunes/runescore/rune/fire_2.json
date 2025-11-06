@@ -3,9 +3,6 @@
     "#minecraft:enchantable/fire_aspect": {
       "minecraft:fire_aspect": 1
     },
-    "#minecraft:enchantable/bow": {
-      "minecraft:flame": 1
-    },
     "#minecraft:enchantable/armor": {
       "minecraft:fire_protection": 2
     }
